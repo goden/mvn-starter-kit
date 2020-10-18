@@ -31,3 +31,36 @@
 - 在系統變數列表中選擇`Path`變數，點選**編輯**鈕開啟<u>編輯環境變數</u>視窗，新增`%MAVEN_HOME%\bin`的變數值。
 - 新增完畢後依序關閉所有視窗。
 
+### Linux/Mac平台
+
+- 下載並解壓縮
+
+  ```bash
+  // Linux
+  $ wget https://downloads.apache.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
+  
+  // Mac
+  $ curl -0 https://downloads.apache.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
+  
+  // Execute the below commands
+  $ tar -xvf apache-maven-3.6.3-bin.tar.gz
+  $ sudo mv -f apache-maven-3.6.3-bin /usr/local
+  ```
+
+- 編輯 `/etc/profile`，並加入以下代碼：
+
+  ```bash
+  $ sudo vi /etc/profile
+  
+  // append below snippets
+  // .....
+  export MAVEN_HOME=/usr/local/apache-maven-3.6.3
+  export PATH=${PATH}:${MAVEN_HOME}/bin
+  ```
+
+- 存檔後執行以下指令使環境變數生效
+
+  ```bash
+  $ source /etc/profile
+  ```
+
